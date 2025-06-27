@@ -1,2 +1,27 @@
-*.txt
+*.out
 *.exe
+
+build/
+*.o
+*.obj
+
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS / Linux
+.DS_Store
+*.swp
+
+# Logs / dumps / temporary
+*.txt
+*.log
+*.tmp
+*.bak
+
+# CMake / Make intermediate
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
