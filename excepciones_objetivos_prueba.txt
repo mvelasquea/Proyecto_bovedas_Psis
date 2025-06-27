@@ -1,0 +1,25 @@
+Saldo Insuficiente 	
+Cuando se intenta retirar o trasladar más dinero del que hay disponible.
+
+Transportadora Invalida 	
+Cuando se registra una empresa de transporte no válida o desconocida.
+
+Fecha Invalida 	
+Si la fecha ingresada está mal formateada o es anterior al sistema permitido.
+
+Operacion No Reconocida 	
+Cuando el tipo de operación no es "retiro", "depósito", "traslado", etc.
+
+Plaza Invalida 	Cuando se intenta operar en una plaza no registrada.
+
+Entidad No Registrada 	
+Cuando el origen o destino no existe en el sistema bancario.
+
+MontoNegativo	
+Si se ingresan montos negativos para alguna denominación.
+
+Denominacio nInvalida 	
+Si se colocan valores absurdos (ej. billetes de 3 o 70).
+
+Archivo Log 	
+Si ocurre un error al guardar registros en el archivo log/bitácora.
