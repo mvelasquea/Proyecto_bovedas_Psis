@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <regex>
+#include <fstream>
 
 Banco::Banco() {}
 
@@ -57,4 +58,19 @@ void Banco::mostrarSaldos() const
 void Banco::exportarBitacora(const std::string &archivo) const
 {
   log.guardarEnArchivo(archivo);
+}
+void Banco::exportarBitacoraCSV(const std::string &archivo) const
+{
+    std::ofstream out(archivo);
+    out << "Evento,Detalle\n"; // Cabecera para Excel
+
+    for (const auto& evento : log.getEventos()) {
+        // Suponiendo que el formato es "Processed: fecha | tipo | transportadora | plaza | origen->destino | Total=xxx"
+        size_t pos = evento.find(": ");
+        std::string tipo = (pos != std::string::npos) ? evento.substr(0, pos) : "";
+        std::string detalle = (pos != std::string::npos) ? evento.substr(pos + 2) : evento;
+        // Reemplaza '|' por ',' para separar columnas en el detalle
+        std::replace(detalle.begin(), detalle.end(), '|', ',');
+        out << tipo << "," << detalle << "\n";
+    }
 }

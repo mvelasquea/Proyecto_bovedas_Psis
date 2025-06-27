@@ -28,6 +28,7 @@ public:
     void mostrarHistorial() const;
     void mostrarSaldos() const;
     void exportarBitacora(const std::string& archivo) const;
+    void exportarBitacoraCSV(const std::string& archivo) const;
 };
 
 #endif

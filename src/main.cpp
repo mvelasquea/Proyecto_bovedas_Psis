@@ -35,6 +35,8 @@ int main()
   banco.mostrarSaldos();
   banco.exportarBitacora("bitacora.txt");
   std::cout << "Bitacora exported to bitacora.txt\n";
+  banco.exportarBitacoraCSV("bitacora.csv");
+  std::cout << "Bitacora exported to bitacora.csv\n";
 
   return 0;
 }
