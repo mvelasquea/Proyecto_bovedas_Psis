@@ -2,11 +2,13 @@
 #define TRANSACCION_H
 
 #include <string>
+#include <map>
 
-class Transaccion {
+class Transaccion
+{
 private:
     std::string fecha;
-    int cantidad200, cantidad100, cantidad50, cantidad10, cantidad5;
+    std::map<int, int> cantidades; // Ej: {200: 1, 100: 0, ...}
     std::string tipoOperacion;
     std::string transportadora;
     std::string plaza;
@@ -15,10 +17,10 @@ private:
 
 public:
     // Constructor
-    Transaccion(const std::string& fecha, int c200, int c100, int c50,
-                int c10, int c5, const std::string& tipoOperacion,
-                const std::string& transportadora, const std::string& plaza,
-                const std::string& origen, const std::string& destino);
+    Transaccion(const std::string &fecha, int c200, int c100, int c50,
+                int c10, int c5, const std::string &tipoOperacion,
+                const std::string &transportadora, const std::string &plaza,
+                const std::string &origen, const std::string &destino);
 
     // Métodos Getters
     std::string getFecha() const;
