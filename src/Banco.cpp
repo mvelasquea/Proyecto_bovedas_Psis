@@ -34,13 +34,13 @@ void Banco::procesarTransaccion(const Transaccion &t)
 
   double amt = t.calcularMontoTotal();
   if (t.getTipoOperacion() == "retiro")
-    saldo.descontarSaldo("Soles", amt);
-  else
-    saldo.agregarSaldo("Soles", amt);
+    saldo.descontarSaldo(t.getMoneda(), amt);
+  else if (t.getTipoOperacion() == "deposito")
+    saldo.agregarSaldo(t.getMoneda(), amt);
 
   historialTransacciones.push_back(t);
-  log.registrarEvento("Processed: " + t.getResumen());
-}
+  log.registrarEvento("Procesado: " + t.getResumen() + " Saldo actual banco=" + t.getMoneda()+"= "+std::to_string(saldo.obtenerSaldo(t.getMoneda())));
+} 
 
 void Banco::mostrarHistorial() const
 {
