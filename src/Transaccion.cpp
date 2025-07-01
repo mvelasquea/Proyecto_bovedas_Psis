@@ -65,8 +65,18 @@ double Transaccion::calcularMontoTotal() const
 
 std::string Transaccion::getResumen() const
 {
+    std::string rutaStr;
+    if (!ruta.empty()) {
+        rutaStr = "Ruta: ";
+        for (size_t i = 0; i < ruta.size(); ++i) {
+            rutaStr += ruta[i];
+            if (i < ruta.size() - 1) rutaStr += " -> ";
+        }
+    } else {
+        rutaStr = "No hay ruta definida";
+    }
     return fecha + " | " + tipoOperacion + " | " + transportadora +
            " | " + plaza + " | " + origen + "->" + destino +
            " | Moneda=" + moneda +
-           " | Total=" + std::to_string(calcularMontoTotal());
+           " | Total=" + std::to_string(calcularMontoTotal()) + "  " + rutaStr;
 }
