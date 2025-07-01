@@ -13,7 +13,7 @@ private:
     SaldoBCR saldo;
     Bitacora log;
 
-    // Validaciones internas
+    // Validaciones internas(metodos)
     void validarTransportadora(const std::string& nombre);
     void validarOperacion(const std::string& tipo);
     void validarFecha(const std::string& fecha);
@@ -21,7 +21,7 @@ private:
 public:
     Banco();
 
-    // Procesar una transacción nueva
+    
     void procesarTransaccion(const Transaccion& t);
 
     // Acciones administrativas

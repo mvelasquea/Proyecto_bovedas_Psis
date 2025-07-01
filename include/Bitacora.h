@@ -7,7 +7,7 @@
 class Bitacora {
 private:
     std::vector<std::string> registros;
-
+//muestra de enevntos
 public:
     void registrarEvento(const std::string& mensaje);
     void mostrarEventos() const;

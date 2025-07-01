@@ -1,5 +1,5 @@
-#include "include/Banco.h"
-#include "include/Transaccion.h"
+#include "Banco.h"
+#include "Transaccion.h"
 #include <iostream>
 
 int main()
